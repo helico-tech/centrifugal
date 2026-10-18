@@ -1,0 +1,4 @@
+# quad-snd declares its JS audio functions without a wasm import module,
+# so newer rust-lld treats them as missing; let them become imports.
+[target.wasm32-unknown-unknown]
+rustflags = ["-C", "link-arg=--allow-undefined"]

@@ -1,0 +1,11 @@
+# Browser version on Cloudflare Workers (static assets only, no worker code).
+# Build dist/ with web/build.sh, then: npx wrangler deploy
+name = "centrifugal"
+compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./dist"
+
+[[routes]]
+pattern = "centrifugal.helico.app"
+custom_domain = true
